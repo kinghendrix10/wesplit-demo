@@ -3,6 +3,8 @@ import imutils
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
+import openai
+import groq
 
 
 def orient_vertical(img):
@@ -108,3 +110,15 @@ def enhance_txt(img):
     thresh, binary = cv2.threshold(blurred, threshold, 255, cv2.THRESH_BINARY)
 
     return binary
+
+
+def read_image_with_openai(image_path):
+    with open(image_path, "rb") as image_file:
+        image_data = image_file.read()
+    response = openai.Image.create(file=image_data, purpose="image_recognition")
+    return response
+
+
+def classify_items_with_groq(text):
+    response = groq.Classify.create(text=text)
+    return response

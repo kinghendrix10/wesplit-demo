@@ -17,3 +17,6 @@ pip3 install pytesseract
 
 brew install graphviz
 pip3 install code2flow
+
+pip3 install openai
+pip3 install groq

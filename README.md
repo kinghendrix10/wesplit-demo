@@ -52,4 +52,33 @@ Torn Receipt:
 ## License:
 - MIT License
 - I would appreciate if you quote my name and the link to this GitHub repo if you reference this code. Thanks!
-----
+
+## New AI Features
+This project now includes functionality to use AI such as OpenAI image reader to view images and Groq to read and classify items on receipts. These new AI features enhance the capabilities of the app for better results and use cases.
+
+### Installation
+The installation script `install_packages.sh` now includes the installation of OpenAI and Groq dependencies. Follow the steps below to install the required packages:
+
+1. Download this repository to your local machine
+2. Open the project directory
+3. In Terminal, run the automated script to install packages
+   - chmod +x install_packages.sh
+   - sh install_packages.sh
+4. Create folders under the project directory
+   - `raw`
+   - `preprocessed`
+   - `output`
+
+### Usage
+To use the new AI features, follow the steps below:
+
+1. Add a scanned receipt (i.e. .JPG, .PNG) to the `raw` folder
+2. Run the script:
+   - python3 run.py
+3. The enhanced receipt (`enhanced.jpg`) will be saved in the `preprocessed` folder
+4. The OCR text output (`enhanced.txt`) will be saved in the `output` folder
+
+### Benefits
+The new AI features provide the following benefits:
+- Improved accuracy in reading and classifying items on receipts
+- Enhanced capabilities for better results and use cases
