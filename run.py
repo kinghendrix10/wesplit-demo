@@ -3,7 +3,7 @@ import imutils
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
-from functions import orient_vertical, sharpen_edge, binarize, find_receipt_bounding_box, find_tilt_angle, adjust_tilt, crop, enhance_txt
+from functions import orient_vertical, sharpen_edge, binarize, find_receipt_bounding_box, find_tilt_angle, adjust_tilt, crop, enhance_txt, send_to_gpt4_vision
 import code2flow
 import pytesseract
 
@@ -48,6 +48,15 @@ txt = pytesseract.image_to_string(enhanced_path, config=options_all)
 txt_path = 'output/enhanced.txt'
 with open(txt_path, 'w') as f:
     f.write(txt)
+    f.close()
+
+# Send to GPT-4 Vision
+gpt4_response = send_to_gpt4_vision(raw_path, txt)
+
+# Save GPT-4 Vision output
+gpt4_txt_path = 'output/gpt4_enhanced.txt'
+with open(gpt4_txt_path, 'w') as f:
+    f.write(gpt4_response)
     f.close()
 
 # Generate and save flowchart

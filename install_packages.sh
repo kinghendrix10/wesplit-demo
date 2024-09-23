@@ -17,3 +17,6 @@ pip3 install pytesseract
 
 brew install graphviz
 pip3 install code2flow
+
+# Install GPT-4 Vision dependencies
+pip3 install openai
