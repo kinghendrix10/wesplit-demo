@@ -3,6 +3,7 @@ import imutils
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
+import openai  # Pce83
 
 
 def orient_vertical(img):
@@ -108,3 +109,18 @@ def enhance_txt(img):
     thresh, binary = cv2.threshold(blurred, threshold, 255, cv2.THRESH_BINARY)
 
     return binary
+
+
+def send_to_gpt4_vision(image_path, extracted_text):
+    openai.api_key = "YOUR_OPENAI_API_KEY"
+
+    with open(image_path, "rb") as image_file:
+        image_data = image_file.read()
+
+    response = openai.Image.create(
+        file=image_data,
+        model="gpt-4-vision",
+        prompt=extracted_text
+    )
+
+    return response['data']['text']  # Pbb2d

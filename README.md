@@ -27,6 +27,10 @@ As part of KaggleX BIPOC Mentorship Program-Cohort2 (Dec 2022 - Mar 2023), I cre
 ## Output
 - Enhanced receipt (`enhanced.jpg`) is saved in `preprocessed`folder
 - OCR text ourput (`enhanced.txt`) is saved in `output` folder
+- GPT-4 Vision enhanced text output (`gpt4_enhanced.txt`) is saved in `output` folder
+
+## GPT-4 Vision Integration
+This project now includes integration with GPT-4 Vision. After extracting text using Tesseract OCR, the original image and the extracted text are sent to GPT-4 Vision for further analysis. This helps in correcting errors, filling in gaps, and providing additional context to the extracted text.
 
 Enjoy! 
 
